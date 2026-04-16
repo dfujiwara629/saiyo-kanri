@@ -131,7 +131,7 @@ const loadData = async id => {
     const data=await readBin(id);
     if(data?.candidates) setState({cands:data.candidates,syncing:false,lastSync:new Date(),phase:'app'});
     else setState({syncing:false,phase:'app'});
-  }catch(e){setState({syncing:false});}
+  }catch(e){setState({syncing:false,phase:'setup'});}
 };
 
 const saveData = async newCands => {
