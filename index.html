@@ -80,7 +80,7 @@ const h      = (tag,attrs,...children) => {
     else if(k==='html')el.innerHTML=v;
     else el.setAttribute(k,v);
   });
-  children.flat().forEach(c=>c!=null&&el.appendChild(typeof c==='string'?document.createTextNode(c):c));
+  children.flat().forEach(c=>c!=null&&c!==false&&el.appendChild(typeof c==='string'?document.createTextNode(c):c));
   return el;
 };
 
